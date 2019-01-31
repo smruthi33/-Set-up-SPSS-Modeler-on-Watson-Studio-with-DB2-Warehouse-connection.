@@ -96,6 +96,7 @@ A user will learn how to:
 * [Object Storage Service Instance](https://console.bluemix.net/catalog/services/cloud-object-storage) from the IBM Cloud catalog
 * [Watson Studio Service Instance](https://console.bluemix.net/catalog/services/watson-studio) from the IBM Cloud catalog
 * [DB2 Warehouse Service Instance](https://cloud.ibm.com/catalog/services/db2-warehouse) from the IBM Cloud catalog
+* For this tutorial, we will be using Titanic Dataset from Kaggle which can be found here- https://www.kaggle.com/c/titanic/data. Once you download, the dataset, unzip the file onto your local file system.
 
 
 ## Estimated time
@@ -107,28 +108,66 @@ Completing this tutorial should take about 30 minutes.
 ### 1. Load Sample Data in DB2 warehouse
 
 * Open your [IBM Cloud Dashboard](https://cloud.ibm.com/) and under `Cloud Foundry Services` open your created `DB2 Warehouse instance`.
-* 
+* Click on `Open Console` in the page opened, as given below.
 
-### 1. Add the DB2 Warehouse Connection in Watson Studio
+![](/images/open_db2.png)
 
-* Open your Watson Studio from IBM Cloud Dashboard and Navigate to the created project.
+* Once the service opens up, From the side menu, click on the `load` option.
+
+![](/images/load_table.png)
+
+* Select the `train.csv` file from the unzipped data folder from Kaggle.
+
+![](/images/file_selection.png)
+
+* Once you load select your appropriate Schema, usually specified as DASH followed by a series of numbers. Click on the `New Table` option as shown.
+
+![](/images/new_table.png)
+
+* Name it `TITANIC_DATA` or any other name of your choice. And click on `Begin Load`.
+
+### 2. Add the DB2 Warehouse Connection in Watson Studio
+
+* Open your Watson Studio from IBM Cloud Dashboard and Navigate to the created project or create a new `Modeler` Project and make sure you link your Cloud Object Storage instance to the Project.
+
+![](/images/modeler_project.png)
+
 * Click on the `Add to Project` button and select `Connection`.
 
-![](/doc/source/images/add_to_project_connection.png)
+![](images/add_to_project_connection.png)
 
 * Select your `DB2 Warehouse` instance created on IBM Cloud.
 
-![](/doc/source/images/db2_warehouse_connection.png)
+![](images/db2_warehouse_connection.png)
 
 * The details would already be filled and click the `Create` button.
 
-![](/doc/source/images/create_db2_connection.png)
+![](images/create_db2_connection.png)
 
-### 2. Add the DB2 Connection in the SPSS Modeler
+### 3. Create the SPSS Modeler and insert data from DB2 Warehouse
 
-* Create a new SPSS Modeler or load an Existing Modeler Stream either `From URL` or `From File`.
-* On the Right side menu under the `Import` tab click on `Data Assets`.
+* Click on the `Add to Project` button and select `Modeler`.
 
+![](/images/add_to_project_modeler.png)
+
+* Enter the a name for the modeler and make sure the below options are selected, and click on `Create`.
+
+![](/images/create_spss.png)
+
+* On the Right side menu under the `Import` tab drag and drop the `Data Assets` node.
+
+![](/images/Data_Asset_1.png)
+
+* Click on the `Connections` tab, select `DB2Warehouse` and select the schema and the uploaded table. Next, click on `Save`.
+
+![](/images/Data_Asset_2.png)
+
+### 4. Visualize, Analyze and perform Feature Selection with SPSS Modeler
+
+* Given a dataset, SPSS Modeler provides many visualisation tools to understand the data. In this section, the tutorial will show how to create these Visualisations and get insights from the data.
+* In the options of the `Data Asset` node, click on the Preview option and go to `Visualisations` tab.
+
+![](/images/visualisations_tab.png)
 
 
 
