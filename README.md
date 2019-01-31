@@ -165,11 +165,44 @@ Completing this tutorial should take about 30 minutes.
 ### 4. Visualize, Analyze and perform Feature Selection with SPSS Modeler
 
 * Given a dataset, SPSS Modeler provides many visualisation tools to understand the data. In this section, the tutorial will show how to create these Visualisations and get insights from the data.
+
+#### Visualize
+
 * In the options of the `Data Asset` node, click on the Preview option and go to `Visualisations` tab.
 
 ![](/images/visualisations_tab.png)
 
+* Histograms are used to show the distribution of the data, in this example, plot a graph by taking `Age` in the x-axis and split-by `sex`.
 
+![](/images/Histogram.png)
+
+From this graph we can see that the ages of the passengers, follows a normal distribution, i.e, most ppl have an age range of 20-55, and there are fewer ppl who are less than 20 and greater than 50. We can also see that, for some age grps, there are more number of men than women.
+
+* A bar diagram makes it easy to compare sets of data between different groups at a glance. Here we see the comparison between the number of male survivors and the number of female survivors. Taking `sex` as the category, Summary value as `count` and the value option as `Survived`.
+
+![](/images/Bar.png)
+
+* A pie chart is best used when trying to work out the composition of something. In this case we give the category as `Cabin`.
+
+![](/images/Pie.png)
+
+From this pie chart, we can see that 80% of the `Cabin` column has NaNs that is missing values. So, we can make a conclusion to drop this column since we know it cannot affect the target, in our case the Survived column.
+
+#### Feature Selection
+
+* Before using Feature Selection, we need to prepare the dataset. First we use `Filler` to fill in all missing values with null and NaN values. Next, we filter out the `Cabin` column from the Visualization stage using `Filter` node. And, finally we assign the correct `Type` to each field and also set the Target field as `Survived`.
+
+![](/images/Data_Prep.png)
+
+* Use the Feature Selection under the `Modeling` tab. and run the modeler.
+
+![](/images/Feature_Selection.png)
+
+* A model node will be generated, while connecting to a `Table` node in the `Output` tab, you can see it filters out the unimportant columns.
+
+### 5. Save Data Back to DB2 Warehouse
+
+* Add the `Data Asset Export` node from `Export` tab. 
 
 ## Summary
 
