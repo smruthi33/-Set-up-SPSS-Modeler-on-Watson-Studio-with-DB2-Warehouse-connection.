@@ -203,7 +203,21 @@ From this pie chart, we can see that 80% of the `Cabin` column has NaNs that is 
 ### 5. Save Data Back to DB2 Warehouse
 
 * Add the `Data Asset Export` node from `Export` tab. 
+* Follow the steps from [1. Load Sample Data in DB2 warehouse](#-1-load-sample-data-in-db2-warehouse) to connect your DB2 Warehouse instance and select any table in that.
+* Before saving the changes for the node. Enter a name for the output table, make sure the name is unique to the table names within the schema.
+
+![](images/save_data.png)
+
+* Run the modeler flow and the desired output will be saved in the `DB2 Warehouse`.
+
+## Related Links
+
+* https://developer.ibm.com/tutorials/spss-data-modelling-prediction/
+* https://developer.ibm.com/tutorials/build-and-compare-models-using-ibm-spss-modeler/
 
 ## Summary
 
-Add call to actions.
+In this how-to, you learnt-
+* How to load data from DB2 Warehouse onto SPSS Modeler. 
+* How to work with SPSS nodes to perform the initial Visualizations, pre-processing and Feature Engineering of a given dataset.
+* How to store back data directly to DB2 Warehouse.
