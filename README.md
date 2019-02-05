@@ -80,7 +80,9 @@ type: tutorial|howto    # REQUIRED
 
 ---
 
-IBM SPSS Modeler provides predictive analytics to help you uncover data patterns, gain predictive accuracy and improve decision making. This tutorial demonstrated an end to end flow of how to use SPSS Modeler on Watson Studio by ingesting data in a database, perform analytics and storing back the results as a new table in the database.
+# Set up SPSS Modeler on Watson Studio with DB2 Warehouse Connection
+
+IBM SPSS Modeler provides predictive analytics to help you uncover data patterns, gain predictive accuracy and improve decision making. This tutorial demonstrates an end to end flow of how to use SPSS Modeler on Watson Studio by ingesting data in a DB2 Warehouse database, perform analytics and storing back the results as a new table in the same database.
 
 
 ## Learning objectives
@@ -96,7 +98,7 @@ A user will learn how to:
 * [Object Storage Service Instance](https://console.bluemix.net/catalog/services/cloud-object-storage) from the IBM Cloud catalog
 * [Watson Studio Service Instance](https://console.bluemix.net/catalog/services/watson-studio) from the IBM Cloud catalog
 * [DB2 Warehouse Service Instance](https://cloud.ibm.com/catalog/services/db2-warehouse) from the IBM Cloud catalog
-* For this tutorial, we will be using Titanic Dataset from Kaggle which can be found here- https://www.kaggle.com/c/titanic/data. Once you download, the dataset, unzip the file onto your local file system.
+* For this tutorial, we will be using Titanic Dataset from Kaggle which can be found here- https://www.kaggle.com/c/titanic/data. Once you download the dataset, unzip the file onto your local file system.
 
 
 ## Estimated time
