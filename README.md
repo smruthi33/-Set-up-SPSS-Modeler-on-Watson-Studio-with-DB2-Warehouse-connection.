@@ -95,8 +95,8 @@ A user will learn how to:
 ## Prerequisites
 
 * [IBM Cloud Account](https://console.bluemix.net/registration/)
-* [Object Storage Service Instance](https://console.bluemix.net/catalog/services/cloud-object-storage) from the IBM Cloud catalog
-* [Watson Studio Service Instance](https://console.bluemix.net/catalog/services/watson-studio) from the IBM Cloud catalog
+* [Object Storage Service Instance](https://cloud.ibm.com/catalog/services/cloud-object-storage) from the IBM Cloud catalog
+* [Watson Studio Service Instance](https://cloud.ibm.com/catalog/services/watson-studio) from the IBM Cloud catalog
 * [DB2 Warehouse Service Instance](https://cloud.ibm.com/catalog/services/db2-warehouse) from the IBM Cloud catalog
 * For this tutorial, we will be using Titanic Dataset from Kaggle which can be found here- https://www.kaggle.com/c/titanic/data. Once you download the dataset, unzip the file onto your local file system.
 
@@ -114,7 +114,7 @@ Completing this tutorial should take about 30 minutes.
 
 ![](/images/open_db2.png)
 
-* Once the service opens up, From the side menu, click on the `load` option.
+* Once the service opens up, from the side menu, click on the `load` option.
 
 ![](/images/load_table.png)
 
@@ -130,7 +130,7 @@ Completing this tutorial should take about 30 minutes.
 
 ### 2. Add the DB2 Warehouse Connection in Watson Studio
 
-* Open your Watson Studio from IBM Cloud Dashboard and Navigate to the created project or create a new `Modeler` Project and make sure you link your Cloud Object Storage instance to the Project.
+* Open your Watson Studio from IBM Cloud Dashboard and navigate to the created project or create a new `Modeler` Project and make sure you link your Cloud Object Storage instance to the Project.
 
 ![](/images/modeler_project.png)
 
@@ -160,7 +160,7 @@ Completing this tutorial should take about 30 minutes.
 
 ![](/images/Data_Asset_1.png)
 
-* Click on the `Connections` tab, select `DB2Warehouse` and select the schema and the uploaded table. Next, click on `Save`.
+* Click on the `Change Data Asset > Connections > DB2Warehouse` and select the your schema or default schema (starting with DASH) and the uploaded table. Next, click on `Save`.
 
 ![](/images/Data_Asset_2.png)
 
@@ -170,7 +170,7 @@ Completing this tutorial should take about 30 minutes.
 
 #### Visualize
 
-* In the options of the `Data Asset` node, click on the Preview option and go to `Visualisations` tab.
+* In the options of the `Data Asset` node, click on the `Preview` option and go to `Visualisations` tab.
 
 ![](/images/visualisations_tab.png)
 
@@ -192,11 +192,15 @@ From this pie chart, we can see that 80% of the `Cabin` column has NaNs that is 
 
 #### Feature Selection
 
-* Before using Feature Selection, we need to prepare the dataset. First we use `Filler` to fill in all missing values with null and NaN values. Next, we filter out the `Cabin` column from the Visualization stage using `Filter` node. And, finally we assign the correct `Type` to each field and also set the Target field as `Survived`.
+* Before using Feature Selection, we need to prepare the dataset. First we use `Filler` to fill in all missing values with null and NaN values. Next, we filter out the `Cabin` column from the Visualization stage using `Filter` node. And, finally we assign the correct `Type`.
 
 ![](/images/Data_Prep.png)
 
-* Use the Feature Selection under the `Modeling` tab. and run the modeler.
+* In the `Type` node adjust the `Survived` column's `Role` property as `Target`.
+
+![](/images/set_target.png)
+
+* Use the Feature Selection under the `Modeling` tab and run the modeler.
 
 ![](/images/Feature_Selection.png)
 
@@ -210,7 +214,7 @@ From this pie chart, we can see that 80% of the `Cabin` column has NaNs that is 
 
 ![](images/save_data.png)
 
-* Run the modeler flow and the desired output will be saved in the `DB2 Warehouse`.
+* Run the modeler flow and the desired output will be saved in your `DB2 Warehouse`.
 
 ## Related Links
 
