@@ -206,6 +206,7 @@ From this pie chart, we can see that 80% of the `Cabin` column has NaNs that is 
 
 * A model node will be generated, while connecting to a `Table` node in the `Output` tab, you can see it filters out the unimportant columns.
 
+
 ### 5. Save Data Back to DB2 Warehouse
 
 * Add the `Data Asset Export` node from `Export` tab. 
