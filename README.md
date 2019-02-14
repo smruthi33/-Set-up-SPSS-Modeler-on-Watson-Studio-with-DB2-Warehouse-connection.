@@ -206,6 +206,9 @@ From this pie chart, we can see that 80% of the `Cabin` column has NaNs that is 
 
 * A model node will be generated, while connecting to a `Table` node in the `Output` tab, you can see it filters out the unimportant columns.
 
+`Note: Nodes such as the Derive and Merge can be used to create new columns from existing columns and merge two dataframes.
+`
+
 
 ### 5. Save Data Back to DB2 Warehouse
 
